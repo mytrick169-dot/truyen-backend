@@ -142,7 +142,10 @@ POST /api/auth/login
 \`\`\`
             `
         },
-        servers: [{ url: 'http://localhost:5000', description: '🖥️ Local Server' }],
+        servers: [
+            { url: 'https://truyen-backend.onrender.com', description: '🌐 Production Server' },
+            { url: 'http://localhost:5000', description: '🖥️ Local Server' }
+        ],
         components: {
             securitySchemes: {
                 BearerAuth: {
@@ -199,7 +202,7 @@ app.use('/api', comicRoutes);
 app.get('/', (req, res) => res.json({
     success: true,
     message: '✅ Backend TruyenHayPhaiDoc v3.0 đang chạy!',
-    docs: 'http://localhost:5000/api-docs',
+    docs: `${req.protocol}://${req.get('host')}/api-docs`,
     note: 'Tất cả API đều yêu cầu đăng nhập. Đọc hướng dẫn tại /api-docs'
 }));
 
