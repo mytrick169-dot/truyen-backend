@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Environment variables (chứa mật khẩu — KHÔNG được commit)
+.env
+
+# Ảnh upload local (sẽ dùng cloud storage trên production)
+uploads/covers/*
+uploads/chapters/*
+!uploads/covers/.gitkeep
+!uploads/chapters/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
